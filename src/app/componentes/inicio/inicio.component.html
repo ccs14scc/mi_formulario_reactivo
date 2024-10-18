@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <h1>Formulario reactivo</h1>
+      <div class="col-md-12">
+        <form [formGroup]="formularioForm" (ngSubmit)="enviarDatos()">
+            <div class="formGroup">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control"
+                formControlName="nombre" id="nombre"
+                aria-describedby="nombreHelp"
+                placeholder="Ingrese su Nombre">
+                <small class="form-text text-muted">Debe ingresar un nombre. No se aceptan símbolos.</small>
+            </div>
+            <div class="formGroup">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control"
+                formControlName="apellido" id="apellido"
+                aria-describedby="apellidoHelp"
+                placeholder="Ingrese su Apellido">
+                <small class="form-text text-muted">Debe ingresar un apellido. No se aceptan símbolos.</small>
+            </div>
+            <div class="formGroup">
+                <label for="edad">Edad</label>
+                <input type="number" class="form-control"
+                formControlName="edad" id="edad"
+                aria-describedby="edadHelp"
+                placeholder="Ingrese su Edad">
+                <small class="form-text text-muted">Debe ingresar una edad. No se aceptan símbolos.</small>
+            </div>
+            <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" class="form-control"
+                formControlName="email" id="email"
+                aria-describedby="emailHelp"
+                placeholder="Ingrese su Email">
+                <small class="form-text text-muted">Debe ingresar un email. No se aceptan símbolos.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+          <p *ngIf="mensaje">Hola, bienvenido <b>{{mensaje}}</b></p>
+      </div>
+    </div>
+</div>
